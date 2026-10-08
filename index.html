@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>María Agostina Elli — Analista de Datos</title>
+<meta name="description" content="Portfolio de María Agostina Elli, analista de datos: proyectos en SQL, Power BI y Python, con el caso completo de cada uno.">
+<meta property="og:title" content="María Agostina Elli — Analista de Datos">
+<meta property="og:description" content="Proyectos en SQL, Power BI y Python, con el caso completo de cada uno.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231F6F5C'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%23F5F6F4' font-family='Georgia,serif'%3EAE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F6F4;
+    --paper-alt: #ECEEEA;
+    --ink: #1B1F2A;
+    --ink-soft: #565F5C;
+    --line: #D3D8D2;
+    --teal: #1F6F5C;
+    --amber: #C97B0A;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'IBM Plex Mono', monospace; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; margin: 0; color: var(--ink); }
+  a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--amber); }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+  /* HERO */
+  header.hero { padding: 96px 0 72px; border-bottom: 1px solid var(--line); }
+  .kicker { font-size: 13px; color: var(--teal); margin-bottom: 18px; }
+  h1.title { font-size: clamp(34px, 5vw, 52px); line-height: 1.15; max-width: 20ch; letter-spacing: -0.01em; }
+  .lede { margin-top: 22px; max-width: 58ch; font-size: 16px; color: var(--ink-soft); }
+  .contact-row { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; }
+  .contact-row span.sep { color: var(--line); }
+
+  /* SECCIÓN */
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; padding: 56px 0 20px; gap: 16px; }
+  .section-head h2 { font-size: 26px; }
+  .section-head .count { font-size: 13px; color: var(--ink-soft); }
+
+  /* TARJETAS DE PROYECTO */
+  .card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 6px; padding: 26px 28px; margin-bottom: 20px; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 20px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-soft); }
+  .card-head a { font-size: 13px; }
+  .card h3 { font-size: 23px; margin: 10px 0 8px; }
+  .datum { font-size: 14.5px; color: var(--ink-soft); max-width: 62ch; margin: 0 0 16px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack span { font-size: 11.5px; padding: 3px 9px; border: 1px solid var(--line); border-radius: 3px; color: var(--ink-soft); }
+
+  details { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 14px; }
+  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--teal); }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover { color: var(--amber); }
+  summary b { font-weight: 400; font-size: 18px; line-height: 1; }
+  details:not([open]) summary b::before { content: "+"; }
+  details[open] summary b::before { content: "\2212"; }
+  details[open] summary span::before { content: "Cerrar el caso"; }
+  details[open] summary span { font-size: 0; }
+  details[open] summary span::before { font-size: 13px; }
+
+  .detail-body { margin-top: 16px; font-size: 13.5px; color: var(--ink-soft); max-width: 66ch; }
+  .detail-body p { margin: 0 0 10px; }
+  .detail-body strong { color: var(--ink); font-weight: 600; }
+  .bi-media { margin: 0 0 18px; max-width: none; }
+  .bi-media img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+  .bi-media figcaption { margin-top: 8px; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 620px) {
+    header.hero { padding: 64px 0 48px; }
+    .card { padding: 20px 18px; }
+  }
+
+  /* PIE */
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 44px 0 64px; }
+  footer h2 { font-size: 24px; margin-bottom: 14px; }
+  footer .contact-row { margin-top: 0; }
+  .btn { display: inline-block; margin-top: 22px; padding: 10px 24px; border: 1px solid var(--teal); border-radius: 4px; color: var(--teal); font-size: 14px; text-decoration: none; }
+  .btn:hover { border-color: var(--amber); color: var(--amber); }
+  footer .fine { margin-top: 40px; font-size: 12px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero" id="inicio">
+    <div class="kicker">Portfolio</div>
+    <h1 class="title">María Agostina Elli</h1>
+    <p class="lede">
+      Analista de Datos con 5 años en el mercado farmacéutico.<br>Cada proyecto de esta página me enseñó algo que no sabía cuando lo empecé. Todavía hay mucho por aprender, por lo que continúo capacitándome y buscando nuevos desafíos.
+    </p>
+    <div class="contact-row">
+      <a href="CV_Agostina_Elli.pdf">Descargar CV</a>
+      <span class="sep">/</span>
+      <a href="mailto:m.agostinaelli@gmail.com">m.agostinaelli@gmail.com</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/agostina-elli" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://github.com/magostinaelli" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section id="proyectos">
+    <div class="section-head">
+      <h2>Proyectos</h2>
+      <span class="count">05</span>
+    </div>
+
+    <article class="card">
+      <div class="card-head">
+        <span>Datos y BI</span>
+        
+      </div>
+      <h3>Dashboard de Prestaciones Médicas</h3>
+      <p class="datum">285 mil prestaciones de 18 meses, consolidadas en un único panel.</p>
+      <div class="stack"><span>Power BI</span><span>SQL</span><span>DAX</span></div>
+      <details>
+        <summary><span>Ver el caso completo</span><b aria-hidden="true"></b></summary>
+        <div class="detail-body">
+          <figure class="bi-media"><img src="img/dashboard-prestaciones.gif" alt="Dashboard de Power BI mostrando prestaciones médicas por centro, con filtros de fecha, centro y categoría" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Vista general del dashboard: filtros por fecha, centro y categoría, comparativa entre centros y distribución por tipo de prestación.</figcaption></figure>
+          <p><strong>Problema:</strong> un centro médico con múltiples sucursales necesitaba visibilidad sobre su actividad mensual (consultas, prácticas, imágenes e infiltraciones) por centro, pero la información vivía dispersa en planillas Excel con datos inconsistentes: nombres de centros y profesionales escritos de formas distintas, espacios y tabulaciones sueltas que rompían cualquier análisis directo.</p>
+            <p><strong>Qué hice:</strong> cargué los datos crudos a SQL para limpiarlos y normalizarlos (formatos de texto inconsistentes, espacios/tabulaciones mal ubicados), y desde ahí conecté Power BI para construir el modelo final.</p>
+            <p><strong>Insights:</strong> el dashboard consolida ~18 meses de actividad (entre sep-2023 y jun-2025) por centro y categoría. Sobre 285 mil prestaciones totales, Centro B concentra la mayor participación (~25%), junto con el Centro H, mientras que Centro G —pese a un volumen menor— muestra el crecimiento relativo más alto (+485%), señal de una sucursal en expansión que antes pasaba desapercibida en las planillas sueltas.</p>
+            <p><em>Nota: entre 2024-07 y 2024-11 no se registraron consultas por un corte en el envío de datos desde origen; el salto que se observa en 2024-11 corresponde a la reanudación de los envíos, no a un cambio real de actividad.</em></p>
+            <p><strong>Impacto:</strong> el equipo dejó de revisar planillas dispersas y ahora cuenta con un panel único, filtrable por fecha/centro/categoría, para monitorear cada sucursal con datos consolidados en vez de estimaciones.</p>
+            <p><strong>Stack:</strong> SQL (limpieza y transformación) · Power BI · DAX</p>
+            <p><em>Nota: por confidencialidad, se removió el filtro por profesional y se reemplazaron los nombres reales de los centros por etiquetas genéricas (Centro A, B, C...) para esta muestra. Ambos campos estaban contemplados en el modelo entregado originalmente.</em></p>
+        </div>
+      </details>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <span>Datos y BI</span>
+        <a href="https://github.com/magostinaelli/revenue-analytics-crm-maventech" target="_blank" rel="noopener">Repositorio en GitHub</a>
+      </div>
+      <h3>Revenue Analytics CRM</h3>
+      <p class="datum">El mismo análisis de revenue replicado en SQL, Python y Power BI para validar consistencia.</p>
+      <div class="stack"><span>PostgreSQL</span><span>SQL</span><span>Python</span><span>pandas</span><span>Power BI</span></div>
+      <details>
+        <summary><span>Ver el caso completo</span><b aria-hidden="true"></b></summary>
+        <div class="detail-body">
+          <figure class="bi-media"><img src="img/revenue-analytics.png" alt="Dashboard de Revenue y Performance Comercial de MavenTech en Power BI" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Dashboard final en Power BI: revenue total, por producto, por región y evolución mensual.</figcaption></figure>
+          <p><strong>Objetivo:</strong> recorrer un flujo completo de Revenue Analytics sobre el dataset público CRM Sales Opportunities (Maven Analytics), desde la carga de datos crudos hasta un dashboard ejecutivo, replicando el mismo análisis en 3 herramientas distintas para demostrar consistencia entre ellas.</p>
+            <p><strong>Qué hice:</strong> modelé el dataset en PostgreSQL (con foreign keys entre 4 tablas), hice el EDA y la limpieza en Python (detecté y corregí inconsistencias de escritura que rompían relaciones entre tablas, como "GTXPro" vs "GTX Pro"), escribí queries de negocio en SQL documentadas con su insight, y armé el dashboard final en Power BI.</p>
+            <p><strong>Insights:</strong> revenue total de 10.005.534 sobre 10 meses de operación. GTX Pro es el producto líder, con más de un tercio del revenue total. El win rate está parejo entre productos (60-65%), la diferencia de revenue viene del volumen y precio, no de conversión. El top performer en revenue gestiona un volumen de pipeline mayor que el resto, no convierte mejor que el promedio.</p>
+        </div>
+      </details>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <span>Python</span>
+        <a href="https://github.com/magostinaelli/Analisis-Bursatil" target="_blank" rel="noopener">Repositorio en GitHub</a>
+      </div>
+      <h3>Análisis Bursátil</h3>
+      <p class="datum">Indicadores técnicos y backtesting de estrategias sobre acciones del S&amp;P 500.</p>
+      <div class="stack"><span>Python</span><span>Streamlit</span><span>Pandas</span><span>yfinance</span><span>lightweight-charts</span></div>
+      <details>
+        <summary><span>Ver el caso completo</span><b aria-hidden="true"></b></summary>
+        <div class="detail-body">
+          <figure class="bi-media"><img src="img/analisis-bursatil.gif" alt="App de análisis bursátil mostrando selección de mercado, comparación de acciones, backtesting y curva de equity" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Recorrido por la app: selección de mercado, comparación de acciones, backtesting de estrategia y curva de equity resultante.</figcaption></figure>
+          <p><strong>Motivación:</strong> proyecto personal para aprender Python en profundidad y adentrarme en análisis financiero.</p>
+            <p><strong>Qué hice:</strong> una app que permite analizar acciones por mercado predefinido o selección personalizada, calcular métricas de rendimiento y volatilidad, graficar velas con indicadores técnicos (SMA, EMA, RSI, MACD, Bandas de Bollinger, ATR, OBV, ADX), comparar rendimiento normalizado entre varias acciones, y correr backtesting de estrategias basadas en cruces de medias móviles y RSI.</p>
+            <p><strong>Aprendizaje:</strong> entender en la práctica cómo se construyen y evalúan indicadores técnicos, y qué significa medir el desempeño de una estrategia con métricas objetivas en vez de intuición. Incluye tests unitarios con pytest para los módulos de cálculo.</p>
+        </div>
+      </details>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <span>Python</span>
+        <a href="https://github.com/magostinaelli/comparador-precios-sepa" target="_blank" rel="noopener">Repositorio en GitHub</a>
+      </div>
+      <h3>Comparador de precios — Base SEPA</h3>
+      <p class="datum">Compara los precios de una lista propia de productos en cuatro cadenas de supermercados.</p>
+      <div class="stack"><span>Python</span><span>pandas</span><span>requests</span></div>
+      <details>
+        <summary><span>Ver el caso completo</span><b aria-hidden="true"></b></summary>
+        <div class="detail-body">
+          
+          <p><strong>Problema:</strong> comparar precios de una lista propia de productos entre supermercados es tedioso: hay que entrar cadena por cadena, buscar cada producto y armar la comparación a mano.</p>
+            <p><strong>Qué hice:</strong> un script en Python que consume la API pública de SEPA (Sistema Electrónico de Publicidad de Precios Argentinos), descarga automáticamente el último relevamiento disponible, lo descomprime y normaliza los datos de cada comercio (Carrefour, Día, Coto, Cencosud) en un dataset único, con comparación de precios por producto y precio promedio entre cadenas.</p>
+            <p><strong>Próximos pasos:</strong> scraping de supermercados que no publican en SEPA, interfaz simple (Streamlit) para no tener que tocar código, e historización de precios para ver evolución en el tiempo.</p>
+        </div>
+      </details>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <span>Full-stack</span>
+        <a href="https://github.com/magostinaelli/finance-tracker" target="_blank" rel="noopener">Repositorio en GitHub</a>
+      </div>
+      <h3>Finance Tracker</h3>
+      <p class="datum">API de 11 módulos con transacciones y cálculo automático de cierres de tarjeta y cuotas.</p>
+      <div class="stack"><span>NestJS</span><span>TypeORM</span><span>SQL Server</span><span>Angular</span><span>Angular Material</span><span>RxJS</span></div>
+      <details>
+        <summary><span>Ver el caso completo</span><b aria-hidden="true"></b></summary>
+        <div class="detail-body">
+          
+          <p><strong>Motivación:</strong> aprender desarrollo full-stack combinando un backend robusto con una interfaz real que lo consume.</p>
+            <p><strong>Qué hice:</strong> el sistema modela ingresos, gastos, compras en cuotas y pagos de servicios, y resuelve un problema no trivial: el cálculo de fechas de cierre y vencimiento de tarjetas de crédito (día fijo del mes o reglas relativas, como "el segundo jueves de cada mes"), con prorrateo automático de cuotas.</p>
+            <p><strong>Funcionalidades:</strong> dashboard con resumen mensual por categoría, formulario dinámico según tipo de transacción, vista de cuotas pendientes con filtros, y cierre anual automático vía cron job.</p>
+            <p><strong>Aprendizaje:</strong> cómo estructurar una API con transacciones de base de datos (commit/rollback) para operaciones que tocan varias tablas, y cómo separar responsabilidades entre backend y frontend cuando la lógica de negocio es compleja.</p>
+        </div>
+      </details>
+    </article>
+  </section>
+
+  <footer>
+    <h2>Hablemos</h2>
+    <p class="lede" style="margin-top:10px;">
+      Gracias por llegar hasta acá.<br> Si algún proyecto te dejó una pregunta, escribime.
+    </p>
+    <a class="btn" href="#inicio">Contacto</a>
+    <p class="fine">María Agostina Elli — Portfolio 2026</p>
+  </footer>
+</div>
+
+</body>
+</html>
